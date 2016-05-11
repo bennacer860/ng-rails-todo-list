@@ -1,0 +1,17 @@
+{
+  "name": "ng-rails-todo-list",
+  "homepage": "https://github.com/bennacer860/ng-rails-todo-list",
+  "authors": [
+    "bennacer860 <bennacer860@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
