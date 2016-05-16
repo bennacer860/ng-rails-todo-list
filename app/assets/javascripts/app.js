@@ -10,9 +10,9 @@ angular.module('todoApp', ['ui.router', 'templates'])
 .controller('MainCtrl', [
   '$scope','lists',
    function($scope,lists){
-     console.log(lists);
      $scope.lists = lists.lists;
      $scope.addList = function(){
+     console.log(lists);
        $scope.lists.push({name: $scope.name, completed: false})
      };
    }

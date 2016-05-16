@@ -5,7 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css" media="all">
+    .strikethrough{
+      text-decoration:line-through;
+    }
+  </style>
+
 </head>
+
 <body ng-app="todoApp" ng-controller="MainCtrl">
 
   <div class="container">
@@ -15,7 +22,7 @@
         <div ng-repeat="list in lists">
           <h3>{{list.name}}</h3>
           <div ng-repeat="task in list.tasks">
-            <h5><input type="checkbox" ng-checked="task.completed">{{ task.body }}</h5>
+            <h5><input type="checkbox" ng-checked="task.completed" ng-model="task.completed"><span ng-class="task.completed ? 'strikethrough':''">{{ task.body }}</span></h5>
           </div>
         <div>
         </div>
