@@ -16,29 +16,36 @@
 <body ng-app="todoApp" ng-controller="MainCtrl">
 
   <div class="container">
-    <div class="content-container clearfix">
+
+    <div class="row"> 
       <div class="col-md-12">
-        <h1 class="content-title text-center">Todo</h1>
+      <h1 class="content-title text-center">Todo</h1>
+        <!--taks -->
         <div ng-repeat="list in lists">
           <h3>{{list.name}}</h3>
           <div ng-repeat="task in list.tasks">
             <h5><input type="checkbox" ng-checked="task.completed" ng-model="task.completed"><span ng-class="task.completed ? 'strikethrough':''">{{ task.body }}</span></h5>
           </div>
         </div>
- <form ng-submit="addTask(list)">
-        <input type="text" ng-model="body"></input>
-        <button type="submit"> New Task </button> 
-      </form>
-
+        <form ng-submit="addTask(list)">
+          <input type="text" ng-model="body"></input>
+          <button type="submit"> New Task </button> 
+        </form>
       </div>
+    </div>
 
-      </div>  
-           <hr />
-      <form ng-submit="addList()">
-        <input type="text" ng-model="name"></input>
-        <button type="submit"> New List </button> 
-      </form>
-    </div> 
+    <!-- add new list --> 
+    <div class="row">
+      <hr />
+      <div class="col-md-12">
+        <form ng-submit="addList()">
+          <input type="text" ng-model="name"></input>
+          <button type="submit"> New List </button> 
+        </form>
+      </div>
+    </div>
+
+  <!--end container-->  
   </div>
 
 </body>
