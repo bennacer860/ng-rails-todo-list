@@ -24,9 +24,16 @@
           <div ng-repeat="task in list.tasks">
             <h5><input type="checkbox" ng-checked="task.completed" ng-model="task.completed"><span ng-class="task.completed ? 'strikethrough':''">{{ task.body }}</span></h5>
           </div>
-        <div>
         </div>
+ <form ng-submit="addTask(list)">
+        <input type="text" ng-model="body"></input>
+        <button type="submit"> New Task </button> 
+      </form>
+
+      </div>
+
       </div>  
+           <hr />
       <form ng-submit="addList()">
         <input type="text" ng-model="name"></input>
         <button type="submit"> New List </button> 

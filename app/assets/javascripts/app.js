@@ -12,7 +12,8 @@ angular.module('todoApp', ['ui.router', 'templates'])
    function($scope,lists){
      $scope.lists = lists.lists;
      $scope.addList = function(){
-     console.log(lists);
+       console.log(lists);
+       if(!$scope.name || $scope.name === '') { return;  }
        $scope.lists.push({name: $scope.name, completed: false})
      };
    }
